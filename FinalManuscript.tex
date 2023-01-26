@@ -1,45 +1,55 @@
 \documentclass[oneside,12pt]{discsthesis}
+\usepackage
+[
+        a4paper,% other options: a3paper, a5paper, etc
+        left=1.5in,
+        right=0.98in,
+        top=1in,
+        bottom=1in,
+        marginparsep=0in,
+        marginparwidth=0pt,
+        headheight=0.5in,
+        headsep=2\baselineskip,
+        footskip=0truein
+]{geometry}
 \usepackage{graphicx}
 \usepackage{multirow}
 \usepackage{fancyvrb}
 \usepackage[titletoc]{appendix} 
 \usepackage{subcaption}
 \usepackage{amsmath}
-%\usepackage{rotating}
-%\usepackage{pdfpages}
+\usepackage{pdfpages}
 \usepackage{lscape}
 \usepackage{adjustbox}
 \usepackage{longtable}
 \usepackage{url}
 \usepackage[sorting=none]{biblatex}
-%\usepackage{multicol}
+\usepackage{multicol}
 \usepackage{booktabs}
-\usepackage{todonotes}
 \usepackage{makecell}
-\usepackage{pdfpages}
+\usepackage{siunitx}
+\usepackage{setspace}
+
 \addbibresource{Thesis.bib}
-\title{FinalManuscript_DISCS_UG}
+\title{Exploring alternative topologies in a software-defined network quality of service testing framework}
 \author{Hyeong Seon Yoo}
-\date{March 1, 2018}
+\date{March 1, 2022}
 
-\setstretch{2}
 \begin{document}
-
-\ThesisAuthor{HYEONG SEON YOO}
-\ThesisTitle{EXPLORING ALTERNATIVE TOPOLOGIES IN AN SOFTWARE-DEFINED NETWORK QOS TESTING FRAMEWORK}
+\ThesisAuthor{Hyeong Seon Yoo}
+\ThesisTitle{EXPLORING ALTERNATIVE TOPOLOGIES IN A SOFTWARE-DEFINED NETWORK QOS TESTING FRAMEWORK}
 \ThesisArea{Computer Science}
-\ThesisDefenseYear{2022}
-\DefenseDate{July 23, 2022}
-\ThesisGrade{Excellent}
+\ThesisDefenseYear{2023}
+\DefenseDate{April 2, 2023}
+\ThesisGrade{}
  
 \DepartmentHead{ANDREI D. CORONEL, Ph.D.}
 \SchoolHead{EVANGELINE P. BAUTISTA, Ph.D.}
 \ThesisAdviser{WILLIAM EMMANUEL S. YU, Ph.D.}
 \FirstPanelMember{MA. MERCEDES T. RODRIGO, Ph.D.}
 \SecondPanelMember{JOHN PAUL C. VERGARA, Ph.D.}
-\ThirdPanelMember{MA. REGINA JUSTINA E. ESTUAR, Ph.D.}
 
-\ThesisStyle{MS}{Draft}{-10pt}{15pt}
+\ThesisStyle{MS}{Final}{-10pt}{15pt}
   
 %% Choices for the 1st argument: MS, PhD
 %% Choices for the 2nd argument: Final, FinalWithCorner, Draft
@@ -47,8 +57,8 @@
 %%\FrontMatter
 %\input{acknowledgments}
 
-\input{00_abstract}
-\input{00_acknowledgements}
+\input{Parts/00_abstract}
+\input{Parts/00_acknowledgements}
 \tableofcontents
 \listoffigures
 \listoftables
@@ -56,9 +66,9 @@
 %\MainMatter
 %\input{00_abstract}
 
-\input{01_introduction_00}
-\input{02_relatedliterature}
-\input{03_methodology}
+\input{Parts/01_introduction_00}
+\input{Parts/02_relatedliterature}
+\input{Parts/03_methodology}
 %\input{04_results}
 %\input{04_results_pub}
 %\input{04_results_unpub}
@@ -69,15 +79,15 @@
 
 \printbibliography
 
-%\addappheadtotoc
+\addappheadtotoc
+
 \begin{appendices}
 
 \chapter{Diagrams of Topologies}
-\input{08_Topology_Diagrams}
+\input{Parts/08_Topology_Diagrams}
 
 \chapter{Paper submitted to the 2022 Inernational Conference on Engineering and Emerging Technologies, Kuala Lumpur, Malaysia}
-\input{08_Paper_Submitted}
+\input{Parts/08_Paper_Submitted}
 \end{appendices}
-
 
 \end{document}
