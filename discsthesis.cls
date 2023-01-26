@@ -151,7 +151,7 @@
 %                amssymb,calc,multicol,array,rotating,tabularx,pifont,fancybox,
  %               ulem,enumerate,latexsym,ifthen}
 \RequirePackage{amsmath,newcent,epsfig,
-               amssymb,calc,multicol,array,tabularx,mathptmx,
+               amssymb,calc,multicol,array,tabularx,newtxtext,newtxmath,
                enumerate,latexsym,ifthen,etoolbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -727,7 +727,7 @@ Date:$\;\;\;$ \@DefenseDate
    \else
      \@restonecolfalse
    \fi
-   \vspace*{0cm}
+   \vspace*{-1cm}
    \centerline{\textbf{\contentsname}}
    \vspace*{18pt}
    %\chapter*{
@@ -753,7 +753,7 @@ Date:$\;\;\;$ \@DefenseDate
    \else
      \@restonecolfalse
    \fi
-   \vspace*{0cm}
+   \vspace*{-1cm}
    \centerline{\textbf{\listtablename}}
    \vspace*{18pt}
    %\chapter*{
@@ -780,6 +780,7 @@ Date:$\;\;\;$ \@DefenseDate
    \else
      \@restonecolfalse
    \fi
+   \vspace*{-1cm}
    \centerline{\textbf{\listfigurename}}
    \vspace*{18pt}
    %\chapter*{
