@@ -1,0 +1,61 @@
+\chapter{INTRODUCTION}
+% In this section of the paper, you want to provide the general background and motivation of your study. This can be done defining some key definitions or ideas that govern your study, presenting your context, and narrowing it down with parameters that shall concretize your study.
+
+% This chapter is divided into four parts: the Context of the Study, the Research Objective/s, the Research Questions, the Scope and Limitations, and finally, the Significance of the Study. Each will be described in greater detail in their respective sections. Appendix A summarizes major points for each of these sections and gives sample guide questions for your reference.
+\section{Context of Study}
+
+Network demands for video-conferencing and other high-bandwidth technology is becoming more complex, as well as the network infrastructure that support these demands. For this reason, it is important to develop and test good Quality of Service (QoS) methods, not only in model, typical networks but also in real-life networks. QoS refers to technology that guarantee high-quality provision of resource-intensive, high-priority services \cite{noauthor_what_nodate}. Requirements of QoS are enforced through queuing, which is the ordering of packets in traffic flow, and bandwidth control, which is how much of the network resources the packets take up \cite{zhao_internet_2000}. In traditional networks with disparate forwarding devices with different configurations, queuing and bandwidth control is enforced through service-level agreements between the user and the network provider \cite{karakus_quality_2017}. This does not allow for abstract and fine-grained control of network traffic.
+
+Software-defined networking (SDN) is an emerging network architecture that solves the problem of fragmented network management and configuration by decoupling the data plane from the control plane \cite{kreutz_software-defined_2015}. Forwarding devices in the network are logically centralized, and uses a protocol such as OpenFlow to control behavior. Software-defined networking allows for QoS provisioning to be implemented with a more abstract view of the network , allowing for better control of different types of traffic. Advantages of the SDN paradigm in providing SDN include custom routing of QoS traffic instead of shortest-path routing, better QoE through additional parameters to the traditional QoS metrics, and better monitoring of network dynamics.
+
+Researchers have tested many QoS algorithms on Mininet, which simulates software-defined networks, with a network operating system such as Ryu and OpenFloodLight \cite{karakus_quality_2017}. Regencia and Yu built a testing framework with Mininet and Ryu to test various QoS algorithms under different network topologies \cite{yang_introducing_2022}. However, the study did not investigate the performance of those QoS algorithms in different topologies. The QoS algorithms can be more thoroughly tested with real-world data from the Internet Topology Zoo (ITZ) \cite{knight_internet_2011}, which provides data from network operators about live networks that provide Internet service. This will allow for simulations that better represent the usage of these algorithms under live networks.
+
+\section{Research Questions}
+
+In this study, we investigate the performance of QoS provisioning algorithms over different network topologies, especially in live network topologies from the ITZ. We aim to answer the following questions:
+
+\begin{enumerate}
+    \item How well do Class-based Queuing QoS techniques perform under different network topologies?
+    \item How do distributed QoS and core-enforced QoS differ in performance in the different topologies?
+    \item Which QoS techniques exhibit the best performance in the different network topology tested?
+\end{enumerate}
+
+\section{Research Objectives}
+
+The main objective of this study is to analyze Class-based QoS algorithm performance in various network topologies. To achieve this, we modify the aforementioned framework which has been written to generalize layers in a fat-tree topology to generalize for a general graph topology. In that process, we expect to find some differences in network behavior and they can be quantified. Hence, we have the following specific objectives:
+
+\begin{enumerate}
+    \item Modify the framework by Regencia and Yu to easily simulate various network topologies and QoS algorithms in those topologies,
+    \item Analyze performance of QoS Techniques in different network topology with synthetic traffic load,
+    \item And find differences in behavior of the different network topologies, quantify them, and resolve issues that might arise from those differences.
+\end{enumerate}
+
+
+\section{Scope and Limitations of the Study}
+
+We test the following topologies in the research:
+\begin{itemize}
+    \item Fat tree with fanout of 3 and 2 layers,
+    \item Hypercube with 8 Openflow switches,
+    \item Complete mesh network with 5 Openflow switches,
+    \item Networks from data provided by the Internet Topology Zoo.
+\end{itemize}
+
+For networks from data provided by the Internet Topology Zoo, We select regional and country-level data with at most 40 nodes to ensure that we have sufficient computing resources for the simulation under the heavy synthetic simulations that will be maintained from the previous study. There are 133 topologies with 40 nodes or less, out of 212 regional/country level data. 
+
+Only the topology connecting the clients will be changed from the study by Regencia and Yu. The network traffic tested will be HTTP requests for images and PDF files, and video-on-demand through the VLC Media Player server and client.
+    
+We also limit the tested QoS algorithms to the following:
+\begin{itemize}
+    \item Basic Class-Based Queuing, leaf-enforced
+    \item Basic Class-Based Queuing, core-enforced
+    \item Source Class-Based Queuing, leaf-enforced
+    \item Source Class-Based Queuing, core-enforced
+\end{itemize}
+
+In testing the topology from the Internet Topology Zoo, we assume that all connections are the same, because metadata on the links between the nodes are not present for all nodes.
+
+\section{Significance of the Study}
+
+This is an extension of the framework introduced by Regencia and Yu in testing QoS algorithms. Since network infrastructure is varied across different places and applications, testing QoS provisioning techniques over various topology will provide better insight to how the techniques perform in real-life contexts. Results of this research can further enable research into finding better QoS routing and queuing techniques by identifying the characteristics of each technique over different topologies. The framework for analyzing various network topologies can be further used in network design and testing new algorithms. Finally, the research will allow network providers to implement better techniques for QoS in providing resource-intensive and critical network traffic such as video conferencing and video-on-demand.
+

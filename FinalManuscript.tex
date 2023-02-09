@@ -1,7 +1,24 @@
 \documentclass[oneside,12pt]{discsthesis}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{fancyvrb}
+\usepackage[titletoc]{appendix} 
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{pdfpages}
+\usepackage{lscape}
+\usepackage{adjustbox}
+\usepackage{longtable}
+\usepackage{url}
+\usepackage[sorting=none]{biblatex}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage{setspace}
 \usepackage
 [
-        a4paper,% other options: a3paper, a5paper, etc
+        a4paper,
         left=1.5in,
         right=0.98in,
         top=1in,
@@ -12,23 +29,7 @@
         headsep=2\baselineskip,
         footskip=0truein
 ]{geometry}
-\usepackage{graphicx}
-\usepackage{multirow}
-\usepackage{fancyvrb}
-\usepackage[titletoc]{appendix} 
-\usepackage{subcaption}
-\usepackage{amsmath}
-\usepackage{pdfpages}
-\usepackage{lscape}
-\usepackage{adjustbox}
-\usepackage{longtable}
-\usepackage{url}
-\usepackage[sorting=none]{biblatex}
-\usepackage{multicol}
-\usepackage{booktabs}
-\usepackage{makecell}
-\usepackage{siunitx}
-\usepackage{setspace}
+
 
 \addbibresource{Thesis.bib}
 \title{Exploring alternative topologies in a software-defined network quality of service testing framework}
@@ -57,8 +58,8 @@
 %%\FrontMatter
 %\input{acknowledgments}
 
-\input{Parts/00_abstract}
-\input{Parts/00_acknowledgements}
+\input{00_abstract}
+\input{00_acknowledgements}
 \tableofcontents
 \listoffigures
 \listoftables
@@ -66,9 +67,9 @@
 %\MainMatter
 %\input{00_abstract}
 
-\input{Parts/01_introduction_00}
-\input{Parts/02_relatedliterature}
-\input{Parts/03_methodology}
+\include{01_introduction_00}
+\include{02_relatedliterature}
+\include{03_methodology}
 %\input{04_results}
 %\input{04_results_pub}
 %\input{04_results_unpub}
@@ -84,10 +85,10 @@
 \begin{appendices}
 
 \chapter{Diagrams of Topologies}
-\input{Parts/08_Topology_Diagrams}
+\include{08_Topology_Diagrams}
 
 \chapter{Paper submitted to the 2022 Inernational Conference on Engineering and Emerging Technologies, Kuala Lumpur, Malaysia}
-\input{Parts/08_Paper_Submitted}
+\include{08_Paper_Submitted}
 \end{appendices}
 
 \end{document}

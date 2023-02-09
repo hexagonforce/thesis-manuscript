@@ -92,8 +92,8 @@ There will be 2 servers running a Python server from the http.server library, an
         \multirow{2}{*}{Server ID} & \multirow{2}{*}{Server IP Address} & \multicolumn{2}{c}{File Size and Type} \\
          &  & Low Load & High Load \\
         \midrule
-        Server 1 & 10.0.1.101 & $\SI{100}{\kilo\byte}$ JPEG & $\SI{10}{\mega\byte}$ JPEG \\
-        Server 3 & 10.0.1.103 & $\SI{16}{\mega\byte}$ PDF & $\SI{100}{\mega\byte}$ PDF  \\
+        Server 1 & 10.0.1.101 & \qty{100}{\kilo \byte} JPEG & \qty{10}{\mega \byte} JPEG \\
+        Server 3 & 10.0.1.103 & \qty{16}{\mega \byte} PDF & \qty{100}{\mega \byte} PDF  \\
         \bottomrule
     \end{tabular}
     \caption{Files hosted by the two Python http.server servers}
@@ -147,9 +147,9 @@ The parameters for QoS Ports are identical to the configuration in Regencia and 
     \toprule
         Queue number & Type of traffic & \thead{Minimum and \\Maximum bandwidth} & Priority\\
     \midrule
-        $Q_0$ & TCP & $\SI{333.33}{\mega\bit / \second}$ & 1 \\
-        $Q_1$ & UDP & $\SI{333.33}{\mega\bit / \second}$ & 2 \\
-        $Q_2$ & Others(ICMP, ARP) & $\SI{333.33}{\mega\bit / \second}$ & 0 \\
+        $Q_0$ & TCP & \qty{333.33}{\mega \bit / \second} & 1 \\
+        $Q_1$ & UDP & \qty{333.33}{\mega \bit / \second} & 2 \\
+        $Q_2$ & Others(ICMP, ARP) & \qty{333.33}{\mega \bit / \second} & 0 \\
     \bottomrule
     \end{tabular}
     \caption{Configurations used for ports where QoS parameters are enforced}
