@@ -33,7 +33,7 @@ We test the following topologies:
     \item Topology from the Internet Topology Zoo, Regional or Country data with less than 40 nodes
 \end{enumerate}
 
-The choice of topologies from the Internet Topology Zoo is based on two features: the number of nodes and the number of edges (links) in the graph. From the dataset in the ITZ, we have 133 topologies that are either regional or country data that has less than 40 nodes. This limit is due to the limited resources of the machine that runs the simulations. The clustering was done by reading all 133 topologies into NetworkX, extracting the number of nodes and edges, and using the \textsc{scikit-learn} KMeans clustering library. Each node-edge data point was given the same weight \cite{scikit-learn}. Centroid selection seed was fixed as $0$. We chose 10 random topologies from the four clusters with NumPy, proportional to the number of topologies in each group. The list of the chosen topologies are shown in Table \ref{tab:choices}.
+The choice of topologies from the Internet Topology Zoo is based on two features: the number of nodes and the number of edges (links) in the graph. From the dataset in the ITZ, we have 133 topologies that are either regional or country data that has less than 40 nodes. This limit is due to the limited resources of the machine that runs the simulations. The clustering was done by reading all 133 topologies into NetworkX, extracting the number of nodes and edges, and using the \textsc{scikit-learn} KMeans clustering library. Each node-edge data point was given the same weight \cite{pedregosa_scikit-learn_2011}. Centroid selection seed was fixed as $0$. We chose 10 random topologies from the four clusters with NumPy, proportional to the number of topologies in each group. The list of the chosen topologies are shown in Table \ref{tab:choices}.
 
 \begin{figure}[htbp]
     \centering
@@ -139,28 +139,42 @@ There will be 48 clients that will simultaneously run an ApacheBenchmark test an
 \end{table}
 
 \section{Quality of Service configuration}
-The parameters for QoS Ports are identical to the configuration in Regencia and Yu. In the case of leaf-enforced QoS, the parameters will be applied to all ports at the switches that are connected to the clients. In the case of core-enforced QoS, they will be applied at the port connecting the core switch to the server switch. Table \ref{tab:qosconfig} shows the configuration used for this study.
+All ports in a subset of switches in the network will have QoS paremeters applied to them with the \texttt{ovs-ofctl} command. In the case of leaf-enforced QoS, the parameters were applied to all ports at the switches that are connected to the clients. In the case of core-enforced QoS, they were applied at the port connecting the core switch to the server switch. Table \ref{tab:CBQconfig} and \ref{tab:SBQconfig} shows the QoS configuration used for CBQ and SBQ respectively.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{ccccc}
+    \toprule
+        Queue number & Traffic Protocol & Application & \thead{Minimum and \\Maximum bandwidth} & Priority\\
+    \midrule
+        $Q_0$ & TCP & HTTP traffic (PDF, JPEG files) & \qty{333.33}{\mega \bit / \second} & 1 \\
+        $Q_1$ & UDP & Video streaming & \qty{333.33}{\mega \bit / \second} & 2 \\
+        $Q_2$ & Others(ICMP, ARP) & Network control & \qty{333.33}{\mega \bit / \second} & 0 \\
+    \bottomrule
+    \end{tabular}
+    \caption{QoS configuration used to implement simple CBQ QoS enforcement}
+    \label{tab:CBQconfig}
+\end{table}
 
 \begin{table}[htbp]
     \centering
     \begin{tabular}{cccc}
     \toprule
-        Queue number & Type of traffic & \thead{Minimum and \\Maximum bandwidth} & Priority\\
+        Queue number & Source & \thead{Minimum and \\Maximum bandwidth} & Priority\\
     \midrule
-        $Q_0$ & TCP & \qty{333.33}{\mega \bit / \second} & 1 \\
-        $Q_1$ & UDP & \qty{333.33}{\mega \bit / \second} & 2 \\
-        $Q_2$ & Others(ICMP, ARP) & \qty{333.33}{\mega \bit / \second} & 0 \\
+        $Q_0$ & 10.0.0.1, 4, 7 ... & \qty{333.33}{\mega \bit / \second} & 1 \\
+        $Q_1$ & 10.0.0.2, 5, 8 ... & \qty{333.33}{\mega \bit / \second} & 2 \\
+        $Q_2$ & 10.0.0.3, 6, 9 ... & \qty{333.33}{\mega \bit / \second} & 0 \\
     \bottomrule
     \end{tabular}
-    \caption{Configurations used for ports where QoS parameters are enforced}
-    \label{tab:qosconfig}
+    \caption{QoS configuration used to implement Source-based CBQ QoS enforcement}
+    \label{tab:SBQconfig}
 \end{table}
-
 
 \section{Network Simulation and Testing}
 The methodology of testing the networks is similar to Chato and Yu \cite{chato_exploration_2016} which is also used in Regencia and Yu \cite{yang_introducing_2022}. Since the modified framework uses STP, we have to wait for the STP to converge before running the rest of the tests. We first run pings until a successful ping has been executed. We measure the time for this to take for all topologies. Then, for the actual tests, we wait for at least this amount of time before executing the rest of the tests.
 
-For every topology, we run ping tests, IFSTAT, ApacheBenchmark, and VLC Streaming under all the QoS algorithms to be tested. We show the exact process of running the benchmarks in Figure \ref{fig:benchmark}.
+For every topology, we run \texttt{ping} tests, \texttt{ifstat}, \texttt{hey}, and VLC Streaming under all the QoS algorithms to be tested. We show the exact process of running the benchmarks in Figure \ref{fig:benchmark}.
 
 \begin{figure}
     \centering

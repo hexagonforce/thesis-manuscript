@@ -1,10 +1,10 @@
-.PHONY: FinalManuscript.pdf all clean
+.PHONY: main.pdf all clean
 
-all: FinalManuscript.pdf
+all: main.pdf
 
 
-FinalManuscript.pdf: FinalManuscript.tex
-	latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make FinalManuscript.tex
+main.pdf: main.tex
+	latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make main.tex
 
 clean:
 	latexmk -CA
