@@ -24,5 +24,8 @@
 *.fdb_latexmk
 *.fls
 *.pdf
+!JA-0008-12.24.pdf
+!Conference-Building-Framework.pdf
+*.svg
 *.run.xml
 *.synctex.gz

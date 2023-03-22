@@ -152,7 +152,7 @@
   %               ulem,enumerate,latexsym,ifthen}
 \RequirePackage{amsmath,newcent,epsfig,
                 amssymb,calc,multicol,array,tabularx,pifont,
-                enumerate,latexsym,ifthen}
+                enumerate,latexsym,ifthen, booktabs}
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \newif\if@thdraft{}
  \newcommand\droptnm{final}

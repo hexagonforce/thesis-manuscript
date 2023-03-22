@@ -1,1 +1,37 @@
 \chapter{RESULTS}
+We discuss the convergence times, round-trip times, HTTP stress test benchmark results, and video streaming benchmark results in order, comparing the performances of the different network topologies under the two queuing algorithms tested.
+
+\section{Convergence times}
+First, we discuss the convergence time as described in section \ref{3:testing}. Table \ref{tab:convergence} shows the convergence times of the tested topologies. In both the Basic and Source CBQ, in general, larger networks exhibited higher convergence times. The simple class--based queuing algorithm took much longer to converge than the source class-based queuing algorithm in this test.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{cccc}
+        \toprule
+        \multirow{2}{*}{Topology} & \multirow{2}{*}{Network size}& \multicolumn{2}{c}{Convergence Times} \\
+        & & Basic CBQ & Source CBQ \\
+        \midrule \\
+
+        Agis & 5.370 & 3.950 & \\
+        Atmnet & 6.323 & 3.649 & \\
+        Canerie & 4.640 & 5.118 & \\
+        Gridnet & 3.772 & 3.987 & \\
+        Ibm & 3.669 & 4.074 & \\
+        Janetbackbone & 3.532 & & \\
+        Nsfnet & 3.684 & 4.003 & \\
+        Savvis & 3.139 & 3.107 & \\
+        Singaren & 3.490 & 3.669 & \\
+        WideJpn & 3.848 & 4.074 & \\
+        Mesh & 3.047 & 3.671 & \\
+        Tree & 3.605 & 3.613 & \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Round-trip times}
+Next, we discuss the round trip times after the network has converged. The round trip times are similar in both algorithms, as shown in Tables \ref{tab:cbq_pings} and \ref{tab:sbq_pings}.
+
+\section{VLC traffic performance}
+
+\section{HTTP traffic performance}
+

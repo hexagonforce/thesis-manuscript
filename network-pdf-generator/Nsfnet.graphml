@@ -1,0 +1,656 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d43" for="edge" attr.name="LinkLabel" attr.type="string"/>
+<key id="d42" for="edge" attr.name="LinkType" attr.type="string"/>
+<key id="d41" for="edge" attr.name="rport" attr.type="long"/>
+<key id="d40" for="edge" attr.name="lport" attr.type="long"/>
+<key id="d39" for="edge" attr.name="key" attr.type="long"/>
+<key id="d38" for="edge" attr.name="id" attr.type="string"/>
+<key id="d37" for="node" attr.name="type" attr.type="string"/>
+<key id="d36" for="node" attr.name="label" attr.type="string"/>
+<key id="d35" for="node" attr.name="Longitude" attr.type="double"/>
+<key id="d34" for="node" attr.name="id" attr.type="long"/>
+<key id="d33" for="node" attr.name="Country" attr.type="string"/>
+<key id="d32" for="node" attr.name="Latitude" attr.type="double"/>
+<key id="d31" for="node" attr.name="Internal" attr.type="long"/>
+<key id="d30" for="graph" attr.name="server_switch" attr.type="string"/>
+<key id="d29" for="graph" attr.name="core_switch" attr.type="string"/>
+<key id="d28" for="graph" attr.name="name" attr.type="string"/>
+<key id="d27" for="graph" attr.name="Testbed" attr.type="long"/>
+<key id="d26" for="graph" attr.name="LastProcessed" attr.type="string"/>
+<key id="d25" for="graph" attr.name="DateYear" attr.type="string"/>
+<key id="d24" for="graph" attr.name="NetworkDate" attr.type="string"/>
+<key id="d23" for="graph" attr.name="Transit" attr.type="long"/>
+<key id="d22" for="graph" attr.name="Developed" attr.type="long"/>
+<key id="d21" for="graph" attr.name="Creator" attr.type="string"/>
+<key id="d20" for="graph" attr.name="Layer" attr.type="string"/>
+<key id="d19" for="graph" attr.name="LastAccess" attr.type="string"/>
+<key id="d18" for="graph" attr.name="DateMonth" attr.type="string"/>
+<key id="d17" for="graph" attr.name="DateModifier" attr.type="string"/>
+<key id="d16" for="graph" attr.name="SourceGitVersion" attr.type="string"/>
+<key id="d15" for="graph" attr.name="IX" attr.type="long"/>
+<key id="d14" for="graph" attr.name="Customer" attr.type="long"/>
+<key id="d13" for="graph" attr.name="ToolsetVersion" attr.type="string"/>
+<key id="d12" for="graph" attr.name="label" attr.type="string"/>
+<key id="d11" for="graph" attr.name="Commercial" attr.type="long"/>
+<key id="d10" for="graph" attr.name="Backbone" attr.type="long"/>
+<key id="d9" for="graph" attr.name="DateType" attr.type="string"/>
+<key id="d8" for="graph" attr.name="Type" attr.type="string"/>
+<key id="d7" for="graph" attr.name="Version" attr.type="string"/>
+<key id="d6" for="graph" attr.name="Source" attr.type="string"/>
+<key id="d5" for="graph" attr.name="Access" attr.type="long"/>
+<key id="d4" for="graph" attr.name="Provenance" attr.type="string"/>
+<key id="d3" for="graph" attr.name="Network" attr.type="string"/>
+<key id="d2" for="graph" attr.name="GeoExtent" attr.type="string"/>
+<key id="d1" for="graph" attr.name="GeoLocation" attr.type="string"/>
+<key id="d0" for="graph" attr.name="DateObtained" attr.type="string"/>
+<graph edgedefault="undirected"><data key="d0">14/01/11</data>
+<data key="d1">USA</data>
+<data key="d2">Country</data>
+<data key="d3">NSF</data>
+<data key="d4">Secondary</data>
+<data key="d5">0</data>
+<data key="d6">http://www.nthelp.com/images/nsf.jpg</data>
+<data key="d7">1.0</data>
+<data key="d8">REN</data>
+<data key="d9">Current</data>
+<data key="d10">1</data>
+<data key="d11">0</data>
+<data key="d12">Nsfnet</data>
+<data key="d13">0.3.34dev-20120328</data>
+<data key="d14">1</data>
+<data key="d15">0</data>
+<data key="d16">e278b1b</data>
+<data key="d17">=</data>
+<data key="d18">01</data>
+<data key="d19">14/01/11</data>
+<data key="d20">IP</data>
+<data key="d21">Topology Zoo Toolset</data>
+<data key="d22">1</data>
+<data key="d23">1</data>
+<data key="d24">2011_01</data>
+<data key="d25">2011</data>
+<data key="d26">2011_09_01</data>
+<data key="d27">0</data>
+<data key="d28">Nsfnet</data>
+<data key="d29">switch9</data>
+<data key="d30">switch14</data>
+<node id="switch1">
+  <data key="d31">1</data>
+  <data key="d32">29.76328</data>
+  <data key="d33">United States</data>
+  <data key="d34">0</data>
+  <data key="d35">-95.36327</data>
+  <data key="d36">SEQSUINET, Rice University, Houston</data>
+  <data key="d37">edge_switch</data>
+</node>
+<node id="switch2">
+  <data key="d31">1</data>
+  <data key="d32">40.34872</data>
+  <data key="d33">United States</data>
+  <data key="d34">1</data>
+  <data key="d35">-74.65905</data>
+  <data key="d36">Jon Von Neumann Center, Princeton, NJ</data>
+  <data key="d37">edge_switch</data>
+</node>
+<node id="switch3">
+  <data key="d31">1</data>
+  <data key="d32">33.749</data>
+  <data key="d33">United States</data>
+  <data key="d34">2</data>
+  <data key="d35">-84.38798</data>
+  <data key="d36">SURANET, Georgia Tech, Atlanta</data>
+  <data key="d37">edge_switch</data>
+</node>
+<node id="switch4">
+  <data key="d31">1</data>
+  <data key="d32">40.44062</data>
+  <data key="d33">United States</data>
+  <data key="d34">3</data>
+  <data key="d35">-79.99589</data>
+  <data key="d36">Pittsburgh Supercomputer Center</data>
+  <data key="d37">edge_switch</data>
+</node>
+<node id="switch5">
+  <data key="d31">1</data>
+  <data key="d32">42.44063</data>
+  <data key="d33">United States</data>
+  <data key="d34">4</data>
+  <data key="d35">-76.49661</data>
+  <data key="d36">Cornell Theory Center, Ithaca NY</data>
+  <data key="d37">edge_switch</data>
+</node>
+<node id="switch6">
+  <data key="d31">1</data>
+  <data key="d32">47.60621</data>
+  <data key="d33">United States</data>
+  <data key="d34">5</data>
+  <data key="d35">-122.33207</data>
+  <data key="d36">NorthWestNet, Seattle</data>
+  <data key="d37">edge_switch</data>
+</node>
+<node id="switch7">
+  <data key="d31">1</data>
+  <data key="d32">37.44188</data>
+  <data key="d33">United States</data>
+  <data key="d34">6</data>
+  <data key="d35">-122.14302</data>
+  <data key="d36">BARRnet, Palo Alto</data>
+  <data key="d37">edge_switch</data>
+</node>
+<node id="switch8">
+  <data key="d31">1</data>
+  <data key="d32">32.71533</data>
+  <data key="d33">United States</data>
+  <data key="d34">7</data>
+  <data key="d35">-117.15726</data>
+  <data key="d36">San Diego Supercomputer Center</data>
+  <data key="d37">edge_switch</data>
+</node>
+<node id="switch9">
+  <data key="d31">1</data>
+  <data key="d32">40.76078</data>
+  <data key="d33">United States</data>
+  <data key="d34">8</data>
+  <data key="d35">-111.89105</data>
+  <data key="d36">Westnet, Salt Lake City</data>
+  <data key="d37">switch</data>
+</node>
+<node id="switch10">
+  <data key="d31">1</data>
+  <data key="d32">40.01499</data>
+  <data key="d33">United States</data>
+  <data key="d34">9</data>
+  <data key="d35">-105.27055</data>
+  <data key="d36">NCAR, Boulder</data>
+  <data key="d37">edge_switch</data>
+</node>
+<node id="switch11">
+  <data key="d31">1</data>
+  <data key="d32">40.8</data>
+  <data key="d33">United States</data>
+  <data key="d34">10</data>
+  <data key="d35">-96.66696</data>
+  <data key="d36">MIDnet, Lincoln, NE</data>
+  <data key="d37">edge_switch</data>
+</node>
+<node id="switch12">
+  <data key="d31">1</data>
+  <data key="d32">40.11642</data>
+  <data key="d33">United States</data>
+  <data key="d34">11</data>
+  <data key="d35">-88.24338</data>
+  <data key="d36">NCSA, University of Illinois, Champaign</data>
+  <data key="d37">edge_switch</data>
+</node>
+<node id="switch13">
+  <data key="d31">1</data>
+  <data key="d32">42.27756</data>
+  <data key="d33">United States</data>
+  <data key="d34">12</data>
+  <data key="d35">-83.74088</data>
+  <data key="d36">Merit Univ of Michigan, Ann Arbor</data>
+  <data key="d37">edge_switch</data>
+</node>
+<node id="switch14">
+  <data key="d37">switch</data>
+</node>
+<node id="client1">
+  <data key="d37">client</data>
+</node>
+<node id="client2">
+  <data key="d37">client</data>
+</node>
+<node id="client3">
+  <data key="d37">client</data>
+</node>
+<node id="client4">
+  <data key="d37">client</data>
+</node>
+<node id="client5">
+  <data key="d37">client</data>
+</node>
+<node id="client6">
+  <data key="d37">client</data>
+</node>
+<node id="client7">
+  <data key="d37">client</data>
+</node>
+<node id="client8">
+  <data key="d37">client</data>
+</node>
+<node id="client9">
+  <data key="d37">client</data>
+</node>
+<node id="client10">
+  <data key="d37">client</data>
+</node>
+<node id="client11">
+  <data key="d37">client</data>
+</node>
+<node id="client12">
+  <data key="d37">client</data>
+</node>
+<node id="client13">
+  <data key="d37">client</data>
+</node>
+<node id="client14">
+  <data key="d37">client</data>
+</node>
+<node id="client15">
+  <data key="d37">client</data>
+</node>
+<node id="client16">
+  <data key="d37">client</data>
+</node>
+<node id="client17">
+  <data key="d37">client</data>
+</node>
+<node id="client18">
+  <data key="d37">client</data>
+</node>
+<node id="client19">
+  <data key="d37">client</data>
+</node>
+<node id="client20">
+  <data key="d37">client</data>
+</node>
+<node id="client21">
+  <data key="d37">client</data>
+</node>
+<node id="client22">
+  <data key="d37">client</data>
+</node>
+<node id="client23">
+  <data key="d37">client</data>
+</node>
+<node id="client24">
+  <data key="d37">client</data>
+</node>
+<node id="client25">
+  <data key="d37">client</data>
+</node>
+<node id="client26">
+  <data key="d37">client</data>
+</node>
+<node id="client27">
+  <data key="d37">client</data>
+</node>
+<node id="client28">
+  <data key="d37">client</data>
+</node>
+<node id="client29">
+  <data key="d37">client</data>
+</node>
+<node id="client30">
+  <data key="d37">client</data>
+</node>
+<node id="client31">
+  <data key="d37">client</data>
+</node>
+<node id="client32">
+  <data key="d37">client</data>
+</node>
+<node id="client33">
+  <data key="d37">client</data>
+</node>
+<node id="client34">
+  <data key="d37">client</data>
+</node>
+<node id="client35">
+  <data key="d37">client</data>
+</node>
+<node id="client36">
+  <data key="d37">client</data>
+</node>
+<node id="client37">
+  <data key="d37">client</data>
+</node>
+<node id="client38">
+  <data key="d37">client</data>
+</node>
+<node id="client39">
+  <data key="d37">client</data>
+</node>
+<node id="client40">
+  <data key="d37">client</data>
+</node>
+<node id="client41">
+  <data key="d37">client</data>
+</node>
+<node id="client42">
+  <data key="d37">client</data>
+</node>
+<node id="client43">
+  <data key="d37">client</data>
+</node>
+<node id="client44">
+  <data key="d37">client</data>
+</node>
+<node id="client45">
+  <data key="d37">client</data>
+</node>
+<node id="client46">
+  <data key="d37">client</data>
+</node>
+<node id="client47">
+  <data key="d37">client</data>
+</node>
+<node id="client48">
+  <data key="d37">client</data>
+</node>
+<node id="server1">
+  <data key="d37">server</data>
+</node>
+<node id="server2">
+  <data key="d37">server</data>
+</node>
+<node id="server3">
+  <data key="d37">server</data>
+</node>
+<node id="server4">
+  <data key="d37">server</data>
+</node>
+<edge source="switch1" target="switch3">
+  <data key="d38">e14</data>
+  <data key="d39">0</data>
+  <data key="d40">6</data>
+  <data key="d41">5</data>
+</edge>
+<edge source="switch1" target="switch12">
+  <data key="d38">e8</data>
+  <data key="d39">0</data>
+  <data key="d40">5</data>
+  <data key="d41">5</data>
+</edge>
+<edge source="switch1" target="switch8">
+  <data key="d38">e4</data>
+  <data key="d39">0</data>
+  <data key="d40">7</data>
+  <data key="d41">5</data>
+</edge>
+<edge source="switch1" target="client1">
+  <data key="d40">0</data>
+  <data key="d41">1</data>
+</edge>
+<edge source="switch1" target="client2">
+  <data key="d40">0</data>
+  <data key="d41">2</data>
+</edge>
+<edge source="switch1" target="client3">
+  <data key="d40">0</data>
+  <data key="d41">3</data>
+</edge>
+<edge source="switch1" target="client4">
+  <data key="d40">0</data>
+  <data key="d41">4</data>
+</edge>
+<edge source="switch2" target="switch3">
+  <data key="d38">e13</data>
+  <data key="d39">0</data>
+  <data key="d40">5</data>
+  <data key="d41">6</data>
+</edge>
+<edge source="switch2" target="switch5">
+  <data key="d38">e12</data>
+  <data key="d39">0</data>
+  <data key="d40">6</data>
+  <data key="d41">6</data>
+</edge>
+<edge source="switch2" target="client5">
+  <data key="d40">0</data>
+  <data key="d41">1</data>
+</edge>
+<edge source="switch2" target="client6">
+  <data key="d40">0</data>
+  <data key="d41">2</data>
+</edge>
+<edge source="switch2" target="client7">
+  <data key="d40">0</data>
+  <data key="d41">3</data>
+</edge>
+<edge source="switch2" target="client8">
+  <data key="d40">0</data>
+  <data key="d41">4</data>
+</edge>
+<edge source="switch3" target="client9">
+  <data key="d40">0</data>
+  <data key="d41">4</data>
+</edge>
+<edge source="switch3" target="client10">
+  <data key="d40">0</data>
+  <data key="d41">1</data>
+</edge>
+<edge source="switch3" target="client11">
+  <data key="d40">0</data>
+  <data key="d41">2</data>
+</edge>
+<edge source="switch3" target="client12">
+  <data key="d40">0</data>
+  <data key="d41">3</data>
+</edge>
+<edge source="switch4" target="switch13">
+  <data key="d38">e10</data>
+  <data key="d39">0</data>
+  <data key="d40">6</data>
+  <data key="d41">5</data>
+</edge>
+<edge source="switch4" target="client13">
+  <data key="d40">0</data>
+  <data key="d41">1</data>
+</edge>
+<edge source="switch4" target="client14">
+  <data key="d40">0</data>
+  <data key="d41">2</data>
+</edge>
+<edge source="switch4" target="client15">
+  <data key="d40">0</data>
+  <data key="d41">3</data>
+</edge>
+<edge source="switch4" target="client16">
+  <data key="d40">0</data>
+  <data key="d41">4</data>
+</edge>
+<edge source="switch5" target="switch13">
+  <data key="d38">e11</data>
+  <data key="d39">0</data>
+  <data key="d40">7</data>
+  <data key="d41">5</data>
+</edge>
+<edge source="switch5" target="client17">
+  <data key="d40">0</data>
+  <data key="d41">1</data>
+</edge>
+<edge source="switch5" target="client18">
+  <data key="d40">0</data>
+  <data key="d41">2</data>
+</edge>
+<edge source="switch5" target="client19">
+  <data key="d40">0</data>
+  <data key="d41">3</data>
+</edge>
+<edge source="switch5" target="client20">
+  <data key="d40">0</data>
+  <data key="d41">4</data>
+</edge>
+<edge source="switch6" target="switch10">
+  <data key="d38">e1</data>
+  <data key="d39">0</data>
+  <data key="d40">6</data>
+  <data key="d41">5</data>
+</edge>
+<edge source="switch6" target="switch7">
+  <data key="d38">e0</data>
+  <data key="d39">0</data>
+  <data key="d40">6</data>
+  <data key="d41">6</data>
+</edge>
+<edge source="switch6" target="client21">
+  <data key="d40">0</data>
+  <data key="d41">1</data>
+</edge>
+<edge source="switch6" target="client22">
+  <data key="d40">0</data>
+  <data key="d41">2</data>
+</edge>
+<edge source="switch6" target="client23">
+  <data key="d40">0</data>
+  <data key="d41">3</data>
+</edge>
+<edge source="switch6" target="client24">
+  <data key="d40">0</data>
+  <data key="d41">4</data>
+</edge>
+<edge source="switch7" target="switch13">
+  <data key="d42">T1</data>
+  <data key="d43">T1</data>
+  <data key="d39">0</data>
+  <data key="d40">8</data>
+  <data key="d41">5</data>
+</edge>
+<edge source="switch7" target="switch8">
+  <data key="d38">e2</data>
+  <data key="d39">0</data>
+  <data key="d40">7</data>
+  <data key="d41">6</data>
+</edge>
+<edge source="switch7" target="client25">
+  <data key="d40">0</data>
+  <data key="d41">1</data>
+</edge>
+<edge source="switch7" target="client26">
+  <data key="d40">0</data>
+  <data key="d41">2</data>
+</edge>
+<edge source="switch7" target="client27">
+  <data key="d40">0</data>
+  <data key="d41">3</data>
+</edge>
+<edge source="switch7" target="client28">
+  <data key="d40">0</data>
+  <data key="d41">4</data>
+</edge>
+<edge source="switch8" target="client29">
+  <data key="d40">0</data>
+  <data key="d41">1</data>
+</edge>
+<edge source="switch8" target="client30">
+  <data key="d40">0</data>
+  <data key="d41">2</data>
+</edge>
+<edge source="switch8" target="client31">
+  <data key="d40">0</data>
+  <data key="d41">3</data>
+</edge>
+<edge source="switch8" target="client32">
+  <data key="d40">0</data>
+  <data key="d41">4</data>
+</edge>
+<edge source="switch9" target="switch10">
+  <data key="d38">e5</data>
+  <data key="d39">0</data>
+  <data key="d40">7</data>
+  <data key="d41">1</data>
+</edge>
+<edge source="switch9" target="switch14">
+  <data key="d40">5</data>
+  <data key="d41">2</data>
+</edge>
+<edge source="switch10" target="switch12">
+  <data key="d38">e6</data>
+  <data key="d39">0</data>
+  <data key="d40">5</data>
+  <data key="d41">6</data>
+</edge>
+<edge source="switch10" target="client33">
+  <data key="d40">0</data>
+  <data key="d41">1</data>
+</edge>
+<edge source="switch10" target="client34">
+  <data key="d40">0</data>
+  <data key="d41">2</data>
+</edge>
+<edge source="switch10" target="client35">
+  <data key="d40">0</data>
+  <data key="d41">3</data>
+</edge>
+<edge source="switch10" target="client36">
+  <data key="d40">0</data>
+  <data key="d41">4</data>
+</edge>
+<edge source="switch11" target="switch12">
+  <data key="d38">e7</data>
+  <data key="d39">0</data>
+  <data key="d40">5</data>
+  <data key="d41">7</data>
+</edge>
+<edge source="switch11" target="client37">
+  <data key="d40">0</data>
+  <data key="d41">1</data>
+</edge>
+<edge source="switch11" target="client38">
+  <data key="d40">0</data>
+  <data key="d41">2</data>
+</edge>
+<edge source="switch11" target="client39">
+  <data key="d40">0</data>
+  <data key="d41">3</data>
+</edge>
+<edge source="switch11" target="client40">
+  <data key="d40">0</data>
+  <data key="d41">4</data>
+</edge>
+<edge source="switch12" target="switch13">
+  <data key="d38">e9</data>
+  <data key="d39">0</data>
+  <data key="d40">8</data>
+  <data key="d41">5</data>
+</edge>
+<edge source="switch12" target="client41">
+  <data key="d40">0</data>
+  <data key="d41">1</data>
+</edge>
+<edge source="switch12" target="client42">
+  <data key="d40">0</data>
+  <data key="d41">2</data>
+</edge>
+<edge source="switch12" target="client43">
+  <data key="d40">0</data>
+  <data key="d41">3</data>
+</edge>
+<edge source="switch12" target="client44">
+  <data key="d40">0</data>
+  <data key="d41">4</data>
+</edge>
+<edge source="switch13" target="client45">
+  <data key="d40">0</data>
+  <data key="d41">1</data>
+</edge>
+<edge source="switch13" target="client46">
+  <data key="d40">0</data>
+  <data key="d41">2</data>
+</edge>
+<edge source="switch13" target="client47">
+  <data key="d40">0</data>
+  <data key="d41">3</data>
+</edge>
+<edge source="switch13" target="client48">
+  <data key="d40">0</data>
+  <data key="d41">4</data>
+</edge>
+<edge source="switch14" target="server1">
+  <data key="d40">0</data>
+  <data key="d41">1</data>
+</edge>
+<edge source="switch14" target="server2">
+  <data key="d40">0</data>
+  <data key="d41">2</data>
+</edge>
+<edge source="switch14" target="server3">
+  <data key="d40">0</data>
+  <data key="d41">3</data>
+</edge>
+<edge source="switch14" target="server4">
+  <data key="d40">0</data>
+  <data key="d41">4</data>
+</edge>
+</graph></graphml>

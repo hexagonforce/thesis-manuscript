@@ -171,7 +171,7 @@ All ports in a subset of switches in the network will have QoS paremeters applie
     \label{tab:SBQconfig}
 \end{table}
 
-\section{Network Simulation and Testing}
+\section{Network Simulation and Testing} \label{3:testing}
 The methodology of testing the networks is similar to Chato and Yu \cite{chato_exploration_2016} which is also used in Regencia and Yu \cite{yang_introducing_2022}. Since the modified framework uses STP, we have to wait for the STP to converge before running the rest of the tests. We first run pings until a successful ping has been executed. We measure the time for this to take for all topologies. Then, for the actual tests, we wait for at least this amount of time before executing the rest of the tests.
 
 For every topology, we run \texttt{ping} tests, \texttt{ifstat}, \texttt{hey}, and VLC Streaming under all the QoS algorithms to be tested. We show the exact process of running the benchmarks in Figure \ref{fig:benchmark}.
