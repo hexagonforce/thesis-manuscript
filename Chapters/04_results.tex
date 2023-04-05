@@ -1,37 +1,119 @@
 \chapter{RESULTS}
-We discuss the convergence times, round-trip times, HTTP stress test benchmark results, and video streaming benchmark results in order, comparing the performances of the different network topologies under the two queuing algorithms tested.
+We discuss the results of the topology selection, convergence times, round-trip times, HTTP stress test benchmark results, and video streaming benchmark results in order, comparing the performances of the different network topologies under the two queuing algorithms tested.
 
-\section{Convergence times}
-First, we discuss the convergence time as described in section \ref{3:testing}. Table \ref{tab:convergence} shows the convergence times of the tested topologies. In both the Basic and Source CBQ, in general, larger networks exhibited higher convergence times. The simple class--based queuing algorithm took much longer to converge than the source class-based queuing algorithm in this test.
+\section{Results of clustering and a brief description of the selected topologies}
+
+In general, we have selected topologies of various sizes, some with many loops, and some with structures that are more tree-like. Although this was a sampling from networks with less than 40 nodes, there was still a variety of graph shapes. Figure \ref{fig:groups} shows the clusters formed by the ITZ dataset. Table \ref{tab:choices} describe the key properties of the selected topologies. Together with the baseline topologies described in Section \ref{sec:selection}, the following topologies comprise the set of tested topologies in this study.
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{Figures/clusters.png}
+    \caption{133 ITZ topologies as grouped by K-means method based on the number of nodes and number of edges. Numbers in the middle of similarly-colored points indicate the number of topologies in the group.}
+    \label{fig:groups}
+\end{figure}
 
 \begin{table}[htbp]
     \centering
-    \begin{tabular}{cccc}
-        \toprule
-        \multirow{2}{*}{Topology} & \multirow{2}{*}{Network size}& \multicolumn{2}{c}{Convergence Times} \\
-        & & Basic CBQ & Source CBQ \\
-        \midrule \\
-
-        Agis & 5.370 & 3.950 & \\
-        Atmnet & 6.323 & 3.649 & \\
-        Canerie & 4.640 & 5.118 & \\
-        Gridnet & 3.772 & 3.987 & \\
-        Ibm & 3.669 & 4.074 & \\
-        Janetbackbone & 3.532 & & \\
-        Nsfnet & 3.684 & 4.003 & \\
-        Savvis & 3.139 & 3.107 & \\
-        Singaren & 3.490 & 3.669 & \\
-        WideJpn & 3.848 & 4.074 & \\
-        Mesh & 3.047 & 3.671 & \\
-        Tree & 3.605 & 3.613 & \\
-        \bottomrule
+    \begin{tabular}{ccccc}
+    \toprule
+        Topology Name & Cluster & \makecell{Number of\\ Nodes} & \makecell{Number of \\Edges} & Location \\
+    \midrule
+        Savvis (Figure \ref{fig:Savvis}) & 0 & 19 & 20 & USA \\
+        Atmnet (Figure \ref{fig:Atmnet})& 0 & 21 & 22 & USA \\
+        Ibm (Figure \ref{fig:Ibm})& 0 & 18 & 24 & USA \\
+        Agis (Figure \ref{fig:Agis})& 1 & 25 & 30 & USA \\
+        WideJpn (Figure \ref{fig:WideJpn})& 1 & 30 & 33 & Japan \\
+        Gridnet (Figure \ref{fig:Gridnet})& 2 & 9 & 20 & USA \\
+        Nsfnet (Figure \ref{fig:Nsfnet})& 2 & 13 & 15 & USA \\
+        Singaren (Figure \ref{fig:Singaren})& 2 & 11 & 10 & Singapore \\
+        Janetbackbone (Figure \ref{fig:Janetbackbone})& 3 & 29 & 45 & UK \\
+        Canerie (Figure \ref{fig:Canerie})& 3 & 32 & 41 & Canada \\
+    \bottomrule
     \end{tabular}
+    \caption{10 topologies from the 4 clusters chosen at random with NumPy. Diagrams for these networks are in Appendix I.}
+    \label{tab:choices}
 \end{table}
 
+
+\section{Convergence times}
+The convergence times between Basic CBQ and Source CBQ were incomparable, as under Basic CBQ, all ping requests were responded to, while in Source CBQ, some number of ping requests failed before the round-trip times stabilized. In Table \ref{tab:convergence}, Basic CBQ has the sum total of the round-trip times before the ping times stabilized below 1 millisecond, and Source CBQ has the number of pings that failed before the ping requests succeded. In all cases, the successful ping requests after the failed requests were under 1 millisecond.
+
+\begin{table}[htbp]
+\caption{Convergence times of the tested networks under Basic CBQ and Source CBQ}
+\centering
+\input{Tables/convergence_data.tex}
+\label{tab:convergence}
+\end{table}
+
+This result shows that Basic CBQ converged faster than Source CBQ in all cases. In all cases, Source CBQ dropped some packets before converging. This will require further investigation to explain the cause. In both algorithms, the smaller topologies (Clusters 2, 0, and Base) converged faster than the larger topologies (Clusters 1, 3). This is expected behavior, since larger networks have more hops between nodes on average, leading to more calls to the SDN controller before converging. Therefore, this demonstrates that the framework properly simulates the real-life networks.
+
 \section{Round-trip times}
-Next, we discuss the round trip times after the network has converged. The round trip times are similar in both algorithms, as shown in Tables \ref{tab:cbq_pings} and \ref{tab:sbq_pings}.
+The round trip times were similar in both algorithms, as shown in Tables \ref{tab:cbq_pings} and \ref{tab:sbq_pings}. Under both algorithms, smaller networks in general had lower latency, but the difference was not large. Also, across all topologies, Basic CBQ was slightly faster than Source CBQ.
 
-\section{VLC traffic performance}
+\begin{table}[htbp]
+    \caption{Average round-trip times across all clients of the tested networks under Basic CBQ, in milliseconds}
+    \centering
+    \input{Tables/basic-cbq-pings_pings.tex}
+    \label{tab:cbq_pings}
+\end{table}
 
-\section{HTTP traffic performance}
+\begin{table}[htbp]
+    \caption{Average round-trip times across all clients of the tested networks under Source CBQ, in milliseconds}
+    \centering
+    \input{Tables/source-based-queuing_pings.tex}
+    \label{tab:sbq_pings}
+\end{table}
 
+While smaller topologies in clusters 0, 2 and the base topologies performed better than clusters 3 in both algorithms in this benchmark, Atmnet, which is the worst performing topology in this benchmark, is not the largest topology among the sampled topologies. This suggests that the shape and structure of the underlying graph also matters in round-trip time performance. In this case, Atmnet is a network consisting of two large rings. This may be the reason for the worse performance: the STP protocol chooses a spanning tree through the network, and in the specific case of Atmnet, the chosen is bound to be large due to the shape of the network.
+
+\section{HTTP file transfer traffic performance}
+
+HTTP file transfer traffic as generated by the \textsc{hey} program was the best-effort traffic in this experiment. We used the following KPIs: Number of successful transfers, number of failures, Total bytes transferred and transfer rate. Tables \ref{tab:cbq_http} and \ref{tab:sbq_http} show the average results for Basic CBQ and Source CBQ, respectively.
+
+\begin{table}[htbp]
+    \caption{Average HTTP file transfer performance across all clients of the tested networks under Basic CBQ}
+    \centering
+    \input{Tables/class-based-queuing_http-benchmark.tex}
+    \label{tab:cbq_http}
+\end{table}
+
+\begin{table}[htbp]
+    \caption{Average HTTP file transfer performance across all clients of the tested networks under Source CBQ}
+    \centering
+    \input{Tables/source-based-queuing_http-benchmark.tex}
+    \label{tab:sbq_http}
+\end{table}
+
+Clearly, the Basic CBQ outperformed Source CBQ in terms of reliability, since there were little to no clients that failed to receive data. Under Source CBQ, the number of failed requests was generally higher in larger topologies, with the Agis topology being an outlier. However, in terms of average transfer rate, some topologies performed better under Source CBQ instead of Basic CBQ. A comparison is provided in Table \ref{tab:trasfer_rate_comparison}.
+
+\begin{table}[htbp]
+    \caption{Comparison of average trasfer rates of the tested networks under Class CBQ and Source CBQ}
+    \centering
+    \input{Tables/transfer_rate_comparison.tex}
+    \label{tab:trasfer_rate_comparison}
+\end{table}
+
+This is likely because in the instances where Source CBQ performed better than Basic CBQ, some clients had requested for larger files, and those requests were served better than the requests for smaller files under Source CBQ. We notice also that the number of successful requests in Basic CBQ are much higher than the same in Source CBQ across all topologies. This is likely because in Basic CBQ, the requests for smaller files were served better than the requests for larger files.
+
+We also note that for all Cluster 2 topologies, as well as the similarly-sized Fat-tree topology, Source CBQ had higher transfer rates results. These topologies are common in the fact that they have tree-like shapes with low tree height; that is, the farthest edge nodes are not so far in terms of the number of hops from the root node as described in Section \ref{sec:topo_config}.
+
+However, we also observe that Savvis and Atmnet, which are two topologies similar both in shape and size, had opposite behavior in terms of which algorithm had better transfer rate. This suggests that the volume and type of traffic from the hosts closer to the root node may affect the results of the simulation, as indicates earlier.
+
+\section{Video traffic performance}
+In this experiment, VLC traffic was considered as the high--priority traffic. To measure VLC traffic performance, we took note of the following Key Performance Indicators (KPIs): the total demux bytes read, the demux bitrate, the average number of successful streams and failed streams. In Basic CBQ, video traffic performance was consistent throughout all topologies (Table \ref{tab:cbq_vlc}, with no disconnections or failed connections. However, In Source CBQ, topologies in the clusters with larger networks suffered disconnections, therefore the total demux bytes read and the bitrate was also affected (Table \ref{tab:sbq_vlc}. This can be attributed to the fact that in Source CBQ, in each of the queues, there is neither separation nor priority among the different traffic types.
+
+\begin{table}[htbp]
+    \caption{Average video streaming performance across all clients of the tested networks under Basic CBQ}
+    \centering
+    \input{Tables/class-based-queuing_vlc-bitrate.tex}
+    \label{tab:cbq_vlc}
+\end{table}
+
+\begin{table}[htbp]
+    \caption{Average video steraming performance across all clients of the tested networks under Source CBQ}
+    \centering
+    \input{Tables/source-based-queuing_vlc-bitrate.tex}
+    \label{tab:sbq_vlc}
+\end{table}
+
+Based on this result, we can conclude that Basic CBQ is better at providing QoS guarantees for video traffic than Source CBQ. In Basic CBQ, Clusters 0 and 2, which is composed of the smaller topologies, universally performed better than Clusters 1 and 3, which are the larger topologies. This shows that unlike the HTTP traffic benchmark, the video streaming results are more directly affected by topology size (number of nodes and edges), in cases where the performance guarantee is not consistent.
