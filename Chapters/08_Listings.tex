@@ -1,2 +1,37 @@
 \chapter{Code Listings}
-\lstinputlisting[language=Python, caption=Code snippet used to apply K-means clustering to the ITZ dataset]{Listings/chooser.py}
+
+\begin{listing}[H]
+    \inputminted{python}{Listings/chooser.py}
+    \caption{Code snippet used to apply K-means clustering to the ITZ dataset}
+    \label{lst:kmeans}
+\end{listing}
+
+\begin{listing}[H]
+    \inputminted{yaml}{Listings/simulate_topo.yml}
+    \caption{Topology Configuration file as used in the experiment. \texttt{Savvis.grapml} can be replaced with any GraphML file of choice.}
+    \label{lst:topology_configuration}
+\end{listing}
+
+\begin{listing}[H]
+    \inputminted{yaml}{Listings/class_profile_functionname.yml}
+    \caption{Class Profile Configuration file as used in the experiment.}
+    \label{lst:class_profile_configuration}
+\end{listing}
+
+\begin{listing}[H]
+    \inputminted{yaml}{Listings/traffic_class.yml}
+    \caption{Traffic Class Configuration file as used in the experiment.}
+    \label{lst:traffic_class}
+\end{listing}
+
+\begin{listing}[H]
+    \inputminted{yaml}{Listings/server_config.yml}
+    \caption{Server Configuration file as used in the experiment.}
+    \label{lst:server_config}
+\end{listing}
+
+\begin{listing}[H]
+    \inputminted{yaml}{Listings/config_metadata.yml}
+    \caption{Configuration Metadata file as used in the experiment. \texttt{1.a} can be changed to a different number, depending on the algorithm to be tested, corresponding to the entries in Listing \ref{lst:class_profile_configuration}.}
+    \label{lst:config_metadata}
+\end{listing}

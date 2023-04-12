@@ -15,19 +15,9 @@
 \usepackage{setspace}
 \usepackage{import}
 \usepackage{biblatex}
-\usepackage{tikz}
-\usepackage{pgfplots}
-\usepackage{listings}
+\usepackage{minted}
 \addbibresource{references.bib}
 \usepackage[a4paper,left=1.5in,right=0.98in,top=1in,bottom=1in,marginparsep=0in,marginparwidth=0pt,headheight=0.5in,headsep=2\baselineskip,footskip=0truein]{geometry}
-\lstdefinestyle{mystyle}{
-basicstyle=\ttfamily\footnotesize,
-breaklines=true,                 
-captionpos=b,                    
-keepspaces=true,
-tabsize=2
-}
-\lstset{style=mystyle}
 
 \pdfoptionpdfminorversion=7
 \sisetup{group-separator={,}}
@@ -75,8 +65,8 @@ tabsize=2
 \begin{appendices}
 
 \include{Chapters/08_Topology_Diagrams}
-\include{Chapters/08_Paper_Submitted}
 \include{Chapters/08_Listings}
+\include{Chapters/08_Paper_Submitted}
 \end{appendices}
 
 \end{document}

@@ -117,3 +117,15 @@ In this experiment, VLC traffic was considered as the high--priority traffic. To
 \end{table}
 
 Based on this result, we can conclude that Basic CBQ is better at providing QoS guarantees for video traffic than Source CBQ. In Basic CBQ, Clusters 0 and 2, which is composed of the smaller topologies, universally performed better than Clusters 1 and 3, which are the larger topologies. This shows that unlike the HTTP traffic benchmark, the video streaming results are more directly affected by topology size (number of nodes and edges), in cases where the performance guarantee is not consistent.
+
+\section{Summary of Results}
+
+Table \ref{tab:summary} shows the summary of the Key Performance Indicators of this experiment, which are the round-trip times, HTTP Transfer rates, and Video Demux Bitrate. In all clusters, as well as the baseline topologies, Basic CBQ performed slightly better than Source CBQ in round-trip times, but the difference was minimal. In transfer rate, Source CBQ was better than Basic CBQ in Cluster 2, which contained the smallest topologies. Source CBQ was almost equal in Cluster 0, and worse in the larger topologies in Cluster 1 and 3 than Basic CBQ. For demux bitrate, Basic CBQ performed better than Source CBQ across all topologies, but the difference became more significant in Clusters 1 and 3, which represent the larger topologies. It is also important to note that the fat-tree topology, which is similar in size to Cluster 2, had similar results to the average of Cluster 2 topologies. The smallest mesh topology, with 5 nodes only, outperformed all other, larger topologies, which further confirms that the framework exhibited results within expectations.
+
+\begin{table}[htbp]
+    \caption{Average of key performance indicators by cluster, for Basic CBQ and Source CBQ}
+    \centering
+    \input{Tables/results_summary.tex}
+    \label{tab:summary}
+\end{table}
+

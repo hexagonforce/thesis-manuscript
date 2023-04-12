@@ -1,0 +1,11 @@
+class_profiles :
+  1.a : 
+    description: Basic cbq at the leaves
+    func_name : basic_cbq_leaves
+    qos_type : basic
+    test_case: leaves
+  2.a : 
+    description: Source cbq at the leaves
+    func_name : source_cbq_leaves
+    qos_type : source
+    test_case: leaves
