@@ -33,14 +33,13 @@ These research questions were modified since the start of this study, for the re
 We test the following topologies in the research:
 \begin{itemize}
     \item Fat tree with fanout of 3 and 2 layers,
-    \item Hypercube with 8 Openflow switches,
     \item Complete mesh network with 5 Openflow switches,
     \item Networks from data provided by the Internet Topology Zoo.
 \end{itemize}
 
-For networks from data provided by the Internet Topology Zoo, We select regional and country-level data with at most 40 nodes to ensure that we have sufficient computing resources for the simulation under the heavy synthetic simulations that will be maintained from the previous study. There are 133 topologies with 40 nodes or less, out of 212 regional/country level data. 
+For networks from data provided by the Internet Topology Zoo, We select regional and country-level data with at most 40 nodes to ensure that we have sufficient computing resources for the simulation under the heavy synthetic simulations that will be maintained from the previous study. Only 110 topologies with 40 nodes or less, out of 212 regional/country-level data from the dataset. 
 
-Only the topology connecting the clients was from the study by Regencia and Yu. The network traffic tested will be HTTP requests for images and PDF files, and video-on-demand through the VLC Media Player server and client.
+Only the topology connecting the clients was from the study by Regencia and Yu. The network traffic tested will be HTTP requests for images and PDF files, and video-on-demand through the VLC Media Player RTSP servers and clients.
     
 We also limited the tested QoS algorithms to the following:
 \begin{itemize}
