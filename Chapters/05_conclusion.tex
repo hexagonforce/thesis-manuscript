@@ -1,6 +1,7 @@
 \chapter{CONCLUSION}
 \section{Conclusions}
-We were able to modify the testing framework to properly accomodate different topologies through the use of the NetworkX library and a simple modification to the Ryu switch algorithm with the Spanning-Tree Protocol.
+
+We were able to modify the testing framework to properly accomodate different topologies through the use of the NetworkX library and a simple modification to the Ryu Controller switch algorithm which incorporates the Spanning-Tree Protocol.
 
 From the results we provide the following conclusions:
 \begin{enumerate}
@@ -14,12 +15,14 @@ From the results we provide the following conclusions:
 Regarding point 4, this implies that Basic CBQ was more consistent across all topologies in the video streaming benchmark, which means that Basic CBQ exhibited better performance than Source CBQ.
 
 \section{Recommendations}
-The following improvements to this research can be implemented to better understand the behavior of the QoS algorithms in different networks:
+The following improvements to this research can be implemented to better understand the behavior of the QoS algorithms in different networks.
 \begin{enumerate}
     \item Increase the number of servers and the variety of traffic
-    \item Incorporate PCAP into this research to simulate real-life traffic better
-    \item Use different path-resolution algorithms other than STP
-    \item Increase the scale, both in the size of the network and the number of clients
     \item Investigate algorithms aside from Basic CBQ and Source CBQ, and investigate the differences between leaf-enforced and source-enforced algorithms
+    \item Incorporate PCAP into this research to simulate real-life traffic better
+    \item Increase the scale, both in the size of the network and the number of clients
+    \item Use different path-resolution algorithms other than STP
     \item Investigate the effect of graph structure and shape, while controlling for the number of nodes.
 \end{enumerate}
+
+We also recommend that the framework be further improved so that configuration becomes simpler and more consistent (e.g. using a unified data format for storing configuration files).
