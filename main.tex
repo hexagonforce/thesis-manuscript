@@ -14,9 +14,7 @@
 \usepackage{makecell}
 \usepackage{setspace}
 \usepackage{import}
-\usepackage{biblatex}
 \usepackage{minted}
-\addbibresource{references.bib}
 \usepackage[a4paper,left=1.5in,right=0.98in,top=1in,bottom=1in,marginparsep=0in,marginparwidth=0pt,headheight=0.5in,headsep=2\baselineskip,footskip=0truein]{geometry}
 
 \pdfoptionpdfminorversion=7
@@ -58,8 +56,8 @@
 \input{Chapters/04_results}
 \input{Chapters/05_conclusion}
 
-
-\printbibliography
+\bibliographystyle{acm}
+\bibliography{Thesis}
 \addappheadtotoc
 
 \begin{appendices}

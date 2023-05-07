@@ -2,14 +2,14 @@
 
 \section{Context of Study}
 
-Network demands for video-conferencing and other high-bandwidth technology is becoming more complex, as well as the network infrastructure that support these demands. For this reason, it is important to develop and test good Quality of Service (QoS) methods, not only in model, typical networks but also in real-life networks. QoS refers to technology that guarantee high-quality provision of resource-intensive, high-priority services \cite{noauthor_what_nodate}. Requirements of QoS are enforced through queuing, which is the ordering of packets in traffic flow, and bandwidth control, which is how much of the network resources the packets take up \cite{zhao_internet_2000}. In traditional networks with disparate forwarding devices with different configurations, queuing and bandwidth control is enforced through service-level agreements between the user and the network provider \cite{karakus_quality_2017}. This does not allow for abstract and fine-grained control of network traffic.
+Network demands for video-conferencing and other high-bandwidth technology is becoming more complex, as well as the network infrastructure that support these demands. For this reason, it is important to develop and test good Quality of Service (QoS) methods, not only in model, typical networks but also in real-life networks. QoS refers to technology that guarantee high-quality provision of resource-intensive, high-priority services \cite{noauthor_what_nodate}. One way of enforcing requirements of QoS is \textit{queuing}, which is the ordering of packets in traffic flow, and \textit{bandwidth control}, which controls how much of the network resources the packets take up \cite{zhao_internet_2000}. In traditional networks with disparate forwarding devices with different configurations, queuing and bandwidth control is enforced through service-level agreements between the user and the network provider \cite{karakus_quality_2017}. However, this does not allow for abstract and fine-grained control of network traffic.
 
-Software-defined networking (SDN) is an emerging network architecture that solves the problem of fragmented network management and configuration by decoupling the data plane from the control plane \cite{kreutz_software-defined_2015}. Forwarding devices in the network are logically centralized, and uses a protocol such as OpenFlow to control behavior. Software-defined networking allows for QoS provisioning to be implemented with a more abstract view of the network, allowing for better control of different types of traffic. Advantages of the SDN paradigm in providing SDN include custom routing of QoS traffic instead of shortest-path routing, better QoE through additional parameters to the traditional QoS metrics, and better monitoring of network dynamics.
+Software-defined networking (SDN) is an emerging network architecture that solves the problem of fragmented network management and configuration by decoupling the data plane from the control plane \cite{kreutz_software-defined_2015}. Forwarding devices in the network are logically centralized, and uses a protocol such as OpenFlow to control behavior \cite{kreutz_software-defined_2015}. Software-defined networking allows for QoS provisioning to be implemented with a more abstract view of the network, allowing for better control of different types of traffic \cite{karakus_quality_2017}. Advantages of the SDN paradigm in providing SDN include custom routing of QoS traffic instead of shortest-path routing, better QoE through additional parameters to the traditional QoS metrics, and better monitoring of network dynamics \cite{karakus_quality_2017}.
 
 Researchers have tested many QoS algorithms on Mininet, which simulates software-defined networks, with a network operating system such as Ryu and OpenFloodLight \cite{karakus_quality_2017}. Regencia and Yu built a testing framework with Mininet and Ryu to test various QoS algorithms under different network topologies \cite{yang_introducing_2022}. However, the study did not investigate the performance of those QoS algorithms in different topologies. The QoS algorithms can be more thoroughly tested with real-world data from the Internet Topology Zoo (ITZ) \cite{knight_internet_2011}, which provides data from network operators about live networks that provide Internet service. This testing is important so that the characteristics of the performance of the different algorithms to understand which are the most optimal in real-world network use cases. It also take full advantage of the flexibility of configuration brought by Software-defined networks, which allow control of the nodes and switches in the network without the constraints of hardware-bound firmware control of traditional networks. Note that there are other networking use cases such as QoE and security that can be applied to this framework of testing, especially with different topologies.
 
 \section{Research Objectives}
-The main objective of this study is to analyze Class-based QoS algorithm performance in various network topologies. To achieve this, we modified the aforementioned framework which has been written to generalize layers in a fat-tree topology to generalize for a general graph topology. In that process, we expect to find some differences in network behavior and they can be quantified. Hence, we have the following specific objectives:
+The main objective of this study is to analyze Class-based QoS algorithm performance in various network topologies. To achieve this, we modified the aforementioned framework which has been written to for fat-tree topologies of various sizes to general graph topologies. In that process, we expect to find some differences in network behavior and they can be quantified. Hence, we have the following specific objectives:
 
 \begin{enumerate}
     \item Modify the framework by Regencia and Yu to easily simulate various network topologies and QoS algorithms in those topologies,
@@ -33,13 +33,13 @@ These research questions were modified since the start of this study, for the re
 We test the following topologies in the research:
 \begin{itemize}
     \item Fat tree with fanout of 3 and 2 layers,
-    \item Complete mesh network with 5 Openflow switches,
+    \item Complete mesh network with 5 OpenFlow switches,
     \item Networks from data provided by the Internet Topology Zoo.
 \end{itemize}
 
-For networks from data provided by the Internet Topology Zoo, We select regional and country-level data with at most 40 nodes to ensure that we have sufficient computing resources for the simulation under the heavy synthetic simulations that will be maintained from the previous study. Only 110 topologies with 40 nodes or less, out of 212 regional/country-level data from the dataset. 
+For networks from data provided by the Internet Topology Zoo, We select regional and country-level data with at most 40 nodes to ensure that we have sufficient computing resources for the simulation under the heavy synthetic simulations that will be maintained from the previous study. There were only 110 topologies with 40 nodes or less, out of 212 regional/country-level data from the dataset. 
 
-Only the topology connecting the clients was from the study by Regencia and Yu. The network traffic tested will be HTTP requests for images and PDF files, and video-on-demand through the VLC Media Player RTSP servers and clients.
+Only the topology that connects to the clients was modified from the study by Regencia and Yu. The topology of the server hosts were maintained. The network traffic tested were HTTP requests for images and PDF files, and video-on-demand through the VLC Media Player RTSP servers and clients.
     
 We also limited the tested QoS algorithms to the following:
 \begin{itemize}
@@ -47,7 +47,7 @@ We also limited the tested QoS algorithms to the following:
     \item Source Class-Based Queuing, leaf-enforced
 \end{itemize}
 
-In testing the topology from the Internet Topology Zoo, we assume that all connections are the same, because metadata on the links between the nodes are not present for all nodes.
+In testing the topology from the Internet Topology Zoo, we assumed that all connections are the same, because metadata on the links between the nodes are not present for all nodes.
 
 \section{Significance of the Study}
 

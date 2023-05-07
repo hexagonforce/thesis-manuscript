@@ -1,15 +1,16 @@
 \chapter{CONCLUSION}
 \section{Conclusions}
 
-We were able to modify the testing framework to properly accomodate different topologies through the use of the NetworkX library and a simple modification to the Ryu Controller switch algorithm which incorporates the Spanning-Tree Protocol.
+We were able to modify the testing framework to properly accomodate different topologies through the use of the NetworkX library and a simple modification to the Ryu Controller switch algorithm which incorporates the Spanning-Tree Protocol. We were able to demonstate the functionality of this algorithm with the simulation experiments.
 
-From the results we provide the following conclusions:
+From the results we have the following conclusions:
 \begin{enumerate}
-    \item For round trip times, the two topologies showed similar results; however, the Basic CBQ was able to provide for better service in video traffic, which was the priority traffic in the experiment.
+    \item For round trip times, the two topologies showed similar results. 
     \item For HTTP file transfer performance, while Basic CBQ was more reliable, with little to no failed requests, raw file transfer rate was higher for Source CBQ in some topologies. 
-    \item The performance characteristics across topologies was not purely dependent on the network size. The shape and structure of the topology can also affect the performance metrics.
+    \item For HTTP file transfer performance, smaller topologies in cluster 2 performed better under Source CBQ ($24.5\%-27.2\%$), while larger topologies in cluster 1 and 3 performed better under Basic CBQ ($7.74\%-55.568\%$). Cluster 0, which represented the middle-sized topologies in the experiment, had mixed results.
     \item In Source CBQ, the difference of performance between the different clusters was more pronounced in the two benchmarks, while in Basic CBQ, the trend of increasing performance when moving to smaller-sized clusters was less clear.
     \item The performance deficit of Source CBQ compared to Basic CBQ was larger in clusters with large topologies than in clusters with small topologies.
+    \item The Basic CBQ was able to provide for better service in video traffic, which was the priority traffic in the experiment.
     \item Overall, Basic CBQ outperformed Source CBQ in the random sample of ITZ network topologies, as well as the two model topologies selected for testing. 
 \end{enumerate}
 Regarding point 4, this implies that Basic CBQ was more consistent across all topologies in the video streaming benchmark, which means that Basic CBQ exhibited better performance than Source CBQ.
@@ -24,5 +25,4 @@ The following improvements to this research can be implemented to better underst
     \item Use different path-resolution algorithms other than STP
     \item Investigate the effect of graph structure and shape, while controlling for the number of nodes.
 \end{enumerate}
-
-We also recommend that the framework be further improved so that configuration becomes simpler and more consistent (e.g. using a unified data format for storing configuration files).
+Further comparisons of key performance indicators such as transfer rate and demux bitrate indicate a need for more testing to validate these results and isolate certain variables such as network size, structure, and the choice of path-resolution algorithms. We also recommend that the framework be further improved so that configuration becomes simpler and more consistent (e.g. using a unified data format for storing configuration files).
