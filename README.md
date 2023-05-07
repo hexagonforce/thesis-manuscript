@@ -1,7 +1,7 @@
 # EXPLORING ALTERNATIVE TOPOLOGIES IN A SOFTWARE-DEFINED NETWORK QOS TESTING FRAMEWORK
 by Hyeong Seon Yoo
 
-This is my undergraduate B.S. Computer Science thesis on Software-defined networking Quality of Service provision in different network topologies.
+This is my undergraduate B.S. Computer Science thesis on Software-defined networking Quality of Service provision in different network topologies. A final version of the manuscript was submitted on May 2, 2023, and is now archived for posterity.
 
 ## To compile
 
